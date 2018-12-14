@@ -13,28 +13,35 @@ class loginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new SizedBox(
-      child: new OutlineButton(
-        onPressed: () async {
-          FirebaseUser loadedUser = await _getUser();
-          if(loadedUser != null)
-            Navigator.push(context, MaterialPageRoute(builder: (context) => loggedScreen(loadedUser)));
-        },
-        child: new Stack(children: <Widget>[
-          new Positioned(
-              child:
-                  new Text(_buttonText, style: new TextStyle(fontSize: 20.0)),
-              left: 12.5),
-          new Positioned(
-              child: new Image.asset(_imageLocation, scale: 15.0), right: 10.0),
-        ], alignment: AlignmentDirectional.center),
-        shape: new RoundedRectangleBorder(
+    return new Container(
+      child: new SizedBox(
+        child: new OutlineButton(
+          onPressed: () async {
+            FirebaseUser loadedUser = await _getUser();
+            if (loadedUser != null)
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => loggedScreen(loadedUser)));
+          },
+          child: new Stack(children: <Widget>[
+            new Positioned(
+                child:
+                    new Text(_buttonText, style: new TextStyle(fontSize: 20.0)),
+                left: 7.0),
+            new Positioned(
+                child: new Image.asset(_imageLocation, scale: 15.0),
+                right: 7.0),
+          ], alignment: AlignmentDirectional.center),
+          shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(25.0),
+          ),
+          color: Colors.white,
         ),
-        color: Colors.white,
+        width: 200.0,
+        height: 50.0,
       ),
-      width: 200.0,
-      height: 50.0,
+      margin: new EdgeInsets.only(bottom: 15.0),
     );
   }
 }

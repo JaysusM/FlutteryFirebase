@@ -20,7 +20,9 @@ class HomeWidget extends StatelessWidget {
             child: new Center(
                 child: new Column(
               children: <Widget>[
-                new loginButton("Google", login.googleSignIn, "assets/google.png")
+                new loginButton("Google", login.googleSignIn, "assets/google.png"),
+                new loginButton("Facebook", login.facebookSignIn, "assets/facebook.png"),
+                new loginButton("Anonymous", login.anonymousSignIn, "assets/anonymous.png")
               ],
             )),
             padding: new EdgeInsets.symmetric(vertical: 30.0, horizontal: 15.0)

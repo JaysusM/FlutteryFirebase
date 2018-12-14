@@ -16,13 +16,20 @@ class loggedScreen extends StatelessWidget {
         body: new Center(
             child: new Column(
           children: <Widget>[
-            new Text("\nHi ${_user.displayName}!",
+            new Text(
+                "\nHi ${(_user.isAnonymous) ? "anonymous user" : _user.displayName}!",
                 style: new TextStyle(fontSize: 20.0)),
-            new Text("(${_user.email})"),
+            (_user.isAnonymous)
+                ? new Container()
+                : new Text("(${_user.email})"),
             new Container(
-              child: (!_user.photoUrl.isNotEmpty)
+              child: (_user.photoUrl != null && _user.photoUrl.isNotEmpty)
                   ? new Image.network(_user.photoUrl)
-                  : new Container(child: new Image.asset("assets/anonymous.png", fit: BoxFit.fill), height: 96.0, width: 96.0),
+                  : new Container(
+                      child: new Image.asset("assets/anonymous.png",
+                          fit: BoxFit.fill),
+                      height: 96.0,
+                      width: 96.0),
               margin: new EdgeInsets.all(25.0),
             ),
             new SizedBox(
