@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_button.dart';
-import 'login_functions.dart';
+import 'login.dart';
 
 void main() => runApp(new HomeWidget());
 
@@ -20,9 +20,9 @@ class HomeWidget extends StatelessWidget {
             child: new Center(
                 child: new Column(
               children: <Widget>[
-                new loginButton("Google", login.googleSignIn, "assets/google.png"),
-                new loginButton("Facebook", login.facebookSignIn, "assets/facebook.png"),
-                new loginButton("Anonymous", login.anonymousSignIn, "assets/anonymous.png")
+                new loginButton("Google", Login.googleSignIn, "assets/google.png"),
+                new loginButton("Facebook", Login.facebookSignIn, "assets/facebook.png"),
+                new loginButton("Anonymous", Login.anonymousSignIn, "assets/anonymous.png")
               ],
             )),
             padding: new EdgeInsets.symmetric(vertical: 30.0, horizontal: 15.0)
