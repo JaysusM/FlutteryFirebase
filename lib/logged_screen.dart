@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'storage.dart';
+import 'chat_screen.dart';
 
 class loggedScreen extends StatelessWidget {
   FirebaseUser _user;
@@ -37,8 +38,8 @@ class loggedScreen extends StatelessWidget {
                   : new Container(
                       child: new Image.asset("assets/anonymous.png",
                           fit: BoxFit.fill),
-                      height: 96.0,
-                      width: 96.0),
+                      height: 48.0,
+                      width: 48.0),
               margin: new EdgeInsets.all(25.0),
             ),
             new Container(
@@ -67,7 +68,7 @@ class loggedScreen extends StatelessWidget {
               ),
               margin: new EdgeInsets.only(bottom: 15.0),
             ),
-            new SizedBox(
+            new Container(child: new SizedBox(
               child: new OutlineButton(
                 onPressed: (_user.isAnonymous)
                     ? null
@@ -93,6 +94,38 @@ class loggedScreen extends StatelessWidget {
               ),
               width: 170.0,
               height: 50.0,
+            ),
+            margin: new EdgeInsets.only(bottom: 15.0),
+            ),
+            new Container(
+              child: new SizedBox(
+                child: new OutlineButton(
+                  onPressed: (_user.isAnonymous)
+                      ? null
+                      : () {
+                          Navigator.push(context,
+                              new MaterialPageRoute(builder: (context) {
+                            return ChatScreen(_user);
+                          }));
+                        },
+                  child: new Stack(children: <Widget>[
+                    new Positioned(
+                        child: new Text("Chat",
+                            style: new TextStyle(fontSize: 20.0)),
+                        left: 12.5),
+                    new Positioned(
+                        child: new Image.asset("assets/exit.png", scale: 30.0),
+                        right: 10.0),
+                  ], alignment: AlignmentDirectional.center),
+                  shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(25.0),
+                  ),
+                  color: Colors.white,
+                ),
+                width: 170.0,
+                height: 50.0,
+              ),
+              margin: new EdgeInsets.only(bottom: 15.0),
             ),
           ],
         )));
