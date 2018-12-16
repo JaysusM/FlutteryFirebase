@@ -114,7 +114,7 @@ class loggedScreen extends StatelessWidget {
                             style: new TextStyle(fontSize: 20.0)),
                         left: 12.5),
                     new Positioned(
-                        child: new Image.asset("assets/exit.png", scale: 30.0),
+                        child: new Image.asset("assets/chat.png", scale: 10.0, color: (_user.isAnonymous) ? Colors.grey : Colors.black),
                         right: 10.0),
                   ], alignment: AlignmentDirectional.center),
                   shape: new RoundedRectangleBorder(

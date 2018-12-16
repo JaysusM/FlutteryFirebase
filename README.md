@@ -1,16 +1,15 @@
-# firebase_auth
+# Flutter Firebase App
+This is a simple Flutter app I have made in order to learn how Firebase works.
 
-A new Flutter project.
+## What have I used?
+· Firebase Authentication: Implemented gmail, facebook and anonymous login.
+· Firebase Storage: A logged user will be able to upload an image to the cloud.
+· Firebase Database: If the user is logged, he will be able to access a general realtime chat.
 
-## Getting Started
+## Screenshots
+<img src="https://github.com/JaysusM/FlutteryFirebase/blob/master/screenshots/login.png" align="left" height="600" width="320" hspace="10">
+<img src="https://github.com/JaysusM/FlutteryFirebase/blob/master/screenshots/loggedScreen.png" align="left" height="600" width="320" hspace="10">
+<img src="https://github.com/JaysusM/FlutteryFirebase/blob/master/screenshots/chat.gif" align="left" height="600" width="320" hspace="10">
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+#### Running app
+If you want to run the app you will need the google-services.json file inside android/app/ and add your facebook app id in android/app/src/main/res/values/strings.xml
